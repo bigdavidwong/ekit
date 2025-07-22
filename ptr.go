@@ -18,6 +18,7 @@ func ToPtr[T any](t T) *T {
 	return &t
 }
 
+// DerefPtr 做空指针安全的解引用：nil 返回零值。
 func DerefPtr[T any](ptr *T) T {
 	if ptr == nil {
 		var zero T
