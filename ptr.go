@@ -17,3 +17,11 @@ package ekit
 func ToPtr[T any](t T) *T {
 	return &t
 }
+
+func DerefPtr[T any](ptr *T) T {
+	if ptr == nil {
+		var zero T
+		return zero
+	}
+	return *ptr
+}

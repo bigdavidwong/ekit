@@ -25,3 +25,13 @@ func TestToPtr(t *testing.T) {
 	res := ToPtr[int](i)
 	assert.Equal(t, &i, res)
 }
+
+func TestDerefPtr(t *testing.T) {
+	i := 12
+	valueI := DerefPtr(&i)
+	assert.Equal(t, 12, valueI)
+
+	var ptrJ *string
+	valueJ := DerefPtr(ptrJ)
+	assert.Equal(t, "", valueJ)
+}
